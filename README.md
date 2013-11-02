@@ -1,0 +1,27 @@
+# rserving [![Build Status](https://secure.travis-ci.org/ersmo/rserving.png?branch=master)](http://travis-ci.org/ersmo/rserving)
+
+enhance and simplify interacing with rserve
+
+## Getting Started
+Install the module with: `npm install rserving`
+
+```javascript
+var rserving = require('rserving');
+rserving.awesome(); // "awesome"
+```
+
+## Documentation
+_(Coming soon)_
+
+## Examples
+_(Coming soon)_
+
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+
+## Release History
+_(Nothing yet)_
+
+## License
+Copyright (c) 2013 fanlia  
+Licensed under the MIT license.
