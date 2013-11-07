@@ -2,6 +2,10 @@
 
 enhance and simplify interacing with rserve
 
+## NPM
+[![NPM](https://nodei.co/npm/rserving.png)](https://nodei.co/npm/rserving/)
+[![NPM](https://nodei.co/npm-dl/rserving.png?months=1)](https://nodei.co/npm/rserving/)
+
 ## Getting Started
 Install the module with: `npm install rserving`
 
