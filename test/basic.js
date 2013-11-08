@@ -1,10 +1,7 @@
 "use strict";
 
 var rserving = require('../lib/rserving').load(__dirname);
-// rio.enableDebug(true);
-// rio.enableRecordMode(true, {fileName: 'dump.bin'});
-// rio.enablePlaybackMode(true, {fileName: 'dump.bin'});
-rserving.maxConnection = 17
+// rserving.rio.enableDebug(true);
 
 function show (index, start_time) {
     return function(err, res) {
@@ -26,7 +23,7 @@ var args = {
 var i = -1;
 
 var tasks = [];
-while (++i < 100) {
+while (++i < 20) {
   tasks.push({
     name: 'ex2',
     options: {
@@ -37,11 +34,11 @@ while (++i < 100) {
   });
 
 }
+rserving.maxConnection(16)
 
 // rserving.setOption({
-//   host: '127.0.0.1',
-//   port: 6311,
-//   user: null
+//   host: '192.168.6.5',
+//   port: 6311
 // });
-// rserving.queue.push(tasks);
-rserving.testMaxConnection()
+rserving.queue.push(tasks);
+// rserving.testMaxConnection(null, 40)

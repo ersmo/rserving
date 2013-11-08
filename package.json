@@ -35,7 +35,8 @@
   },
   "keywords": [],
   "dependencies": {
-    "rio": "~1.0.0",
-    "async": "~0.2.9"
+    "rio": "latest",
+    "async": "~0.2.9",
+    "watch": "~0.8.0"
   }
 }
