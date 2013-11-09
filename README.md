@@ -16,18 +16,15 @@ var rserving = require('rserving').load(r_dir); // r_dir: directory for *.R file
 
 ## Documentation
 
-### rserving.maxConnection
-- get current maxConnection
+- rserving.maxConnection
 
 ```javascript
-  rserving.maxConnection() // default is 15
+  rserving.maxConnection() // get current maxConnection, default is 15
 
 ```
 
-- set maxConnection
-
 ```javascript
-  rserving.maxConnection(16) // you need to test the max connection first
+  rserving.maxConnection(16) // set maxConnection, you need to test the max connection first
 
 ```
 
