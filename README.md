@@ -10,21 +10,96 @@ enhance and simplify interacing with rserve
 Install the module with: `npm install rserving`
 
 ```javascript
-var rserving = require('rserving');
-rserving.awesome(); // "awesome"
+var rserving = require('rserving').load(r_dir); // r_dir: directory for *.R files
+
 ```
 
 ## Documentation
-_(Coming soon)_
+
+### rserving.maxConnection
+- get current maxConnection
+
+```javascript
+  rserving.maxConnection() // default is 15
+
+```
+
+- set maxConnection
+
+```javascript
+  rserving.maxConnection(16) // you need to test the max connection first
+
+```
+
+- rserving.testMaxConnection(callback, num)
+
+```javascript
+  rserving.testMaxConnection(function (result) {
+    console.log('Rserve maxConnection is ' + result);
+  }, 30)
+
+```
+
+- rserving.express
+
+```javascript
+  var express = require('express');
+  
+  var three = rserving.express
+  
+  var four = function(req, res, next) {
+    var args = {};
+  
+    args.prods = ["IBM", "YHOO", "MSFT"];
+  
+    req.rserving_options = {
+      name: 'ex2',
+      entryPoint: 'getOptimalPortfolio',
+      data: args
+    };
+    next()
+  };
+  
+  var five = function(req, res, next) {
+    res.json(req.rserving_data);
+  };  
+  
+  var app = express();
+  app.use(four, three, five);
+
+```
 
 ## Examples
-_(Coming soon)_
+```javascript
+
+var task = {
+    name: 'ex2',
+    options: {
+      entryPoint: "getOptimalPortfolio",
+      data: args,      
+      callback: show(i, Date.now())
+    }
+  };
+  
+rserving.maxConnection(16); // set/get maxConnection to Rserve
+
+rserving.setOption({
+  host: 'x.x.x.x', // default: 'localhost'
+  port: 6311, //default: 6311
+});
+
+rserving.on('in', function(count) {
+  console.log('..........in now ' + count)
+})
+rserving.on('out', function(count) {
+  console.log('..........out now ' + count)
+})  
+
+rserving.queue.push(task);
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
 
 ## License
 Copyright (c) 2013 fanlia  
